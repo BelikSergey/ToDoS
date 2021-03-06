@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types'
 import { ImBin } from "react-icons/im";
+import styles from './Todo.module.css'
 
 export default function Todo({text, completed, onToggleCompleted, onDelete}) {
     return (
   <>
     <input
       type="checkbox"
-      className=""
+      className={styles.TodoItem}
       checked={completed}
       onChange={onToggleCompleted}
     />
-    <p className="">{text}</p>
-    <button type="button" className="" onClick={onDelete}>
+    <p className={styles.TodoText}>{text}</p>
+    <button type="button" className={styles.TodoBtn} onClick={onDelete}>
       <ImBin/>
     </button>
   </>

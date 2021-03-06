@@ -28,7 +28,7 @@ class TodoEditor extends Component {
           onChange={this.handleChange}
         ></textarea>
         <button type="submit" className={styles.TodoEditorButton}>
-          <RiSave3Line/>
+          <RiSave3Line className={styles.IconButton}/>
         </button>
       </form>
     );

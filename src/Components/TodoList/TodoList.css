@@ -1,0 +1,33 @@
+.TodoList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 24px;
+    padding: 0;
+}
+
+.TodoListItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.TodoListItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+
+    background-color: green;
+
+    transform: scaleX(0);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.TodoListItem--completed::before {
+    transform: scaleX(1);
+}

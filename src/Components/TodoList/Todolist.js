@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-
+import classNames from 'classnames';
 import Todo from '../Todo';
+import './TodoList.css'
 
 
 const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => (
@@ -9,8 +10,8 @@ const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => (
     {todos.map(({ id, text, completed }) => (
       <li
         key={id}
-        className={classNames('TodoList__item', {
-          'TodoList__item--completed': completed,
+        className={classNames('TodoListItem', {
+          'TodoListItem--completed': completed,
         })}
       >
         <Todo
